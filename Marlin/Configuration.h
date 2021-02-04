@@ -86,8 +86,8 @@ Board name: FYSETCV1_1A, FYSETCV1_1B, FYSETCV1_2A, FYSETCV1_2B, change_value = S
 
 /*Information: Please look for LCD GRAPHICS EXPLANATION for a full reference available on Marlin if required*/ 
 
-#define CR10_STOCKDISPLAY // Choose this if you are using stock LCD display for Ender 3, 5 or BTT TFT touch screens. 
-//#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER // Choose this if your board allows for it. SKR mini e3 v1.2 Do NOT enable this. 
+//#define CR10_STOCKDISPLAY // Choose this if you are using stock LCD display for Ender 3, 5 or BTT TFT touch screens. 
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER // Choose this if your board allows for it. SKR mini e3 v1.2 Do NOT enable this. 
 
 #if ENABLED(kay3d_debuggingmode) //For Debugging purposes only. Please ignore this line of code
 #define x_driver_type TMC2209  //For Debugging purposes only. Please ignore this line of code
@@ -121,12 +121,12 @@ Board name: FYSETCV1_1A, FYSETCV1_1B, FYSETCV1_2A, FYSETCV1_2B, change_value = S
 //#define Ender_5pro // Choose this if you have the Ender 5-Pro
 //#define CR_6SE // Choose this if you have the Creality CR-6 SE
 //#define CR_10 // Choose this if you have Creality CR-10 
-#define CR_10S // Choose this if you have a Creality CR-10s
+//#define CR_10S // Choose this if you have a Creality CR-10s
 //#define CR_10S5 // Choose this if you have a Creality-10 S5 
 //#define CR_10V2 // Choose this if you have a Crealit-10 V2
 //#define Sidewinder_x1 // Choose this if you have an Artillery Sidewinder_x1. Please make sure you have a compatible LCD screen with your chosen board or your compilation will fail. Default is set to CR10_DIPLSY
 //#define Anet_A8 // Choose this only if you have the Anet A8.
-//#define Custom_printer // Choose this if you have a custom printer. 
+#define Custom_printer // Choose this if you have a custom printer. 
 
 /*** *** *** if have a Custom_printer, define your values below. If not, skip this section and continue below *** *** ***/
 
@@ -136,27 +136,27 @@ Board name: FYSETCV1_1A, FYSETCV1_1B, FYSETCV1_2A, FYSETCV1_2B, change_value = S
 #define USE_YMIN_PLUG //if you have an i3 machine, your machine usually home towards the back, where y-min is. 
 #define USE_ZMIN_PLUG //if you have an i3 machine, your machine usually home towards the bottom, where z-min is. 
 //#define USE_XMAX_PLUG //Use this if you home towards X max instead. Please also uncomment X min if you use this.
-//#define USE_YMAX_PLUG //Use this if you home towards Y max instead. Please also uncomment Y min if you use this
+#define USE_YMAX_PLUG //Use this if you home towards Y max instead. Please also uncomment Y min if you use this
 //#define USE_ZMAX_PLUG //Use thisif you home towards Z max instead. Please also uncomment Z min if you use this. 
-#define X_BED_SIZE change_value // This is how big your bed is, in the X direction. Replace change_value with the actual value
-#define Y_BED_SIZE change_value // This is how big your bed is, in the Y direction. Replace change_value with the actual value
+#define X_BED_SIZE 300 // This is how big your bed is, in the X direction. Replace change_value with the actual value
+#define Y_BED_SIZE 300 // This is how big your bed is, in the Y direction. Replace change_value with the actual value
 #define X_MIN_POS 0 //Your X min should be at 0. Change if your printer has a different set up.
 #define Y_MIN_POS 0 //Your Y min should be at 0. Change if your printer has a different set up.
 #define Z_MIN_POS 0 //Your Z min should be at 0. Change if your printer has a different set up.
 #define X_MAX_POS X_BED_SIZE // You can add or minus values to change youru x_max pos. If your x can travel 20mm more than the bed, you want to #define X_MAX_POS X_BED_SIZE + 20 
 #define Y_MAX_POS Y_BED_SIZE // You can add or minus values to change youru x_max pos. If your Y can travel 20mm more than the bed, you want to #define Y_MAX_POS Y_BED_SIZE + 20
-#define Z_MAX_POS change_value // This is how high you can print to, in the X direction. Replace change_value with the actual value
+#define Z_MAX_POS 400 // This is how high you can print to, in the X direction. Replace change_value with the actual value
 #define INVERT_X_DIR true // This defines the direction of travel for your X axis. Change to false if direction is wrong
-#define INVERT_Y_DIR true // This defines the direction of travel for your Y axis. Change to false if direction is wrong
+#define INVERT_Y_DIR false // This defines the direction of travel for your Y axis. Change to false if direction is wrong
 #define INVERT_Z_DIR false // This defines the direction of travel for your Z axis. Change to false if direction is wrong
-#define change_value // Depends on the type of controller LCD you are using. Acceptable values: REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER , CR10_STOCKDISPLAY, VIKI2, miniVIKI, REPRAPWORLD_GRAPHICAL_LCD. See LCD controller section below for full compataible LCD display controllers
+#define REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER // Depends on the type of controller LCD you are using. Acceptable values: REPRAP_DISCOUNT_FULL_GRAPHIC_SMART_CONTROLLER , CR10_STOCKDISPLAY, VIKI2, miniVIKI, REPRAPWORLD_GRAPHICAL_LCD. See LCD controller section below for full compataible LCD display controllers
 #define SHOW_CUSTOM_BOOTSCREEN // Create a bootscreen with the file name "_Bootscreen_Custom" and place it in the same root folder as config.h
-#define CHOPPER_TIMING CHOPPER_DEFAULT_12V // change to 24v if you have a 24v machine
-#define x_steps change_value //This defines the number of steps your X motor requires
-#define y_steps change_value //This defines the number of steps your X motor requires
-#define z_steps change_value //This defines the number of steps your X motor requires
+#define CHOPPER_TIMING CHOPPER_DEFAULT_24V // change to 24v if you have a 24v machine
+#define x_steps 80 //This defines the number of steps your X motor requires
+#define y_steps 80 //This defines the number of steps your X motor requires
+#define z_steps 400 //This defines the number of steps your X motor requires
 #define X_HOME_DIR -1 //This defines the homing direction. Change between values of 1 and -1 to change direction
-#define Y_HOME_DIR -1 //This defines the homing direction. Change between values of 1 and -1 to change direction
+#define Y_HOME_DIR 1 //This defines the homing direction. Change between values of 1 and -1 to change direction
 #define Z_HOME_DIR -1 //This defines the homing direction. Change between values of 1 and -1 to change direction
 #endif
 
@@ -235,7 +235,7 @@ Board name: FYSETCV1_1A, FYSETCV1_1B, FYSETCV1_2A, FYSETCV1_2B, change_value = S
 
 #if ENABLED(BED_PROBE_GRID_COUNT)  //You can ignore this line of code
 
-  #define GRID_MAX_POINTS_X 4 //Recommended value: 4. If you want to probe a 3x3 grid (9 times), choose 3. Choose 5 if you want to probe a 5x5 grid (25 times)
+  #define GRID_MAX_POINTS_X 5 //Recommended value: 4. If you want to probe a 3x3 grid (9 times), choose 3. Choose 5 if you want to probe a 5x5 grid (25 times)
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X //You can ignore this line of code if you are unfamiliar with it. 
 #endif
 
@@ -260,12 +260,12 @@ Board name: FYSETCV1_1A, FYSETCV1_1B, FYSETCV1_2A, FYSETCV1_2B, change_value = S
 //#define KAY3DCoreXY_KAVA_E5P // choose this if you use the the kava sensor and the included E5P CoreXY mount for KAY3D CoreXY based on the Ender 5 Plus
 //#define KAY3DCoreXY_BLTOUCH_E5P //choose this if you use the bLtouch and the included E5P CoreXY mount for KAY3D coreXY based on the Ender 5 Plus
 //#define KAY3DCoreXY_KAVA_E5P_HEROME // Choose this if you use the kava sensor and the herome mount on the E5P CoreXY mount for KAY3D CoreXY based on the Ender 5 Plus
-#define Herome_fanduct_40105015 //choose this if you use Ender 3/pro, the hero me fan duct from thingiverse with single 4010 or 5015 fan. thing: 3182917
+//#define Herome_fanduct_40105015 //choose this if you use Ender 3/pro, the hero me fan duct from thingiverse with single 4010 or 5015 fan. thing: 3182917
 //#define Herome_fanduct_dual5015 //choose this if you use Ender 3/pro, the hero me fan duct from thingiverse with dual 5015 fans. thing: 3182917
 //#define Bltouch_creality_kit //choose this if you use Ender 3/pro, the original bltouch mount from Creality's BLTouch kit
 //#define Petsfang_fanduct //choose this if you use Ender 3/pro, the petsfang duct from thingiverse. thing: 2759439
 //#define Simple_bltouch_mount //thingiverse: thing:3148733 Only works with stock & microswiss hotend on Ender 3/Pro Only. Use above mounts for other hotends such as E3D V6/ Mosquito
-//#define Custom_ABL_mount //If you do not use any of these mounts on your machine, uncomment this to declare your own probe to nozzle values
+#define Custom_ABL_mount //If you do not use any of these mounts on your machine, uncomment this to declare your own probe to nozzle values
 
 /*if have a Custom ABL mount and need to put your own values, please use change_value to define your values below. If not, skip this section and continue below*/
 #if ENABLED(Custom_ABL_mount) 
@@ -1405,9 +1405,9 @@ Board name: FYSETCV1_1A, FYSETCV1_1B, FYSETCV1_2A, FYSETCV1_2B, change_value = S
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-/*#define INVERT_X_DIR false //below codes until "asterisk slash" has already been defined elsewhere in cheetah 5
-#define INVERT_Y_DIR true
-#define INVERT_Z_DIR false*/
+/* #define INVERT_X_DIR true //below codes until "asterisk slash" has already been defined elsewhere in cheetah 5
+#define INVERT_Y_DIR false
+#define INVERT_Z_DIR false */
 
 // @section extruder
 

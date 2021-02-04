@@ -121,12 +121,12 @@ Board name: FYSETCV1_1A, FYSETCV1_1B, FYSETCV1_2A, FYSETCV1_2B, change_value = S
 //#define Ender_5pro // Choose this if you have the Ender 5-Pro
 //#define CR_6SE // Choose this if you have the Creality CR-6 SE
 //#define CR_10 // Choose this if you have Creality CR-10 
-//#define CR_10S // Choose this if you have a Creality CR-10s
+#define CR_10S // Choose this if you have a Creality CR-10s
 //#define CR_10S5 // Choose this if you have a Creality-10 S5 
 //#define CR_10V2 // Choose this if you have a Crealit-10 V2
 //#define Sidewinder_x1 // Choose this if you have an Artillery Sidewinder_x1. Please make sure you have a compatible LCD screen with your chosen board or your compilation will fail. Default is set to CR10_DIPLSY
 //#define Anet_A8 // Choose this only if you have the Anet A8.
-#define Custom_printer // Choose this if you have a custom printer. 
+//#define Custom_printer // Choose this if you have a custom printer. 
 
 /*** *** *** if have a Custom_printer, define your values below. If not, skip this section and continue below *** *** ***/
 
@@ -1405,9 +1405,9 @@ Board name: FYSETCV1_1A, FYSETCV1_1B, FYSETCV1_2A, FYSETCV1_2B, change_value = S
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-/* #define INVERT_X_DIR true //below codes until "asterisk slash" has already been defined elsewhere in cheetah 5
+#define INVERT_X_DIR true //below codes until "asterisk slash" has already been defined elsewhere in cheetah 5
 #define INVERT_Y_DIR false
-#define INVERT_Z_DIR false */
+#define INVERT_Z_DIR false
 
 // @section extruder
 

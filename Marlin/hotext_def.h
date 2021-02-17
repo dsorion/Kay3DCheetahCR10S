@@ -17,7 +17,7 @@
 #endif
 
 #if ENABLED(E3D_v6) 
-#define TEMP_SENSOR_0 5
+#define TEMP_SENSOR_0 1
 #endif
 
 #if ENABLED(E3D_volcano) 
